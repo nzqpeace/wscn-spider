@@ -28,7 +28,7 @@ sys.setdefaultencoding('utf8')
 # very important in China                     - event = "importance=3&cid[]=9"
 
 # select important and very important event in China
-event = ""
+event = "importance=3&cid[]=9"
 
 # name of file which used for store result, mush be *.xls and *.xlsx
 filename = "data.xls"
@@ -157,7 +157,7 @@ class WallStreetCnSpider:
                     self.nextRow = 0
 
                 self.table.write(self.nextRow, 0, createTime)
-                self.table.write(self.nextRow, 1, important)
+                self.table.write(self.nextRow, 1, int(important))
                 self.table.write(self.nextRow, 2, country)
                 self.table.write(self.nextRow, 3, asset)
                 self.table.write(self.nextRow, 4, content)
